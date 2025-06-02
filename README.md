@@ -21,6 +21,9 @@ npm install
 ```
 
 3. Start the server:
+
+- Make sure the backend server is running on `http://localhost:8000`. Find the backend repository [here](https://github.com/iamj33l/Inventory-Management-Backend).
+
 ```commandline
 npm start
 ```
