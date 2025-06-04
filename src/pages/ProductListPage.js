@@ -11,7 +11,7 @@ function ProductListPage() {
   }, []);
 
   const handleDelete = id => {
-    api.delete(`/products/${id}/`).then(() => {
+    api.delete(`/products/${id}/delete/`).then(() => {
       setProducts(prev => prev.filter(p => p.id !== id));
     });
   };
@@ -41,7 +41,6 @@ function ProductListPage() {
               <td>{prod.price}</td>
               <td>{prod.category ? prod.category : 'Uncategorized'}</td>
               <td>
-                <Link to={`/products/${prod.id}/move`} className="btn btn-sm btn-success m-2">Move</Link>
                 <Link to={`/products/${prod.id}/edit`} className="btn btn-sm btn-primary m-2">Edit</Link>
                 <button className="btn btn-sm btn-danger m-2" onClick={() => handleDelete(prod.id)}>Delete</button>
               </td>

@@ -16,20 +16,35 @@ function MovementFormPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (id) {
+      api.get(`/product-movements/${id}/`).then(res => {
+        setFormData(res.data);
+      });
+    }
     api.get('/products/').then(res => setProducts(res.data));
     api.get('/locations/').then(res => setLocations(res.data));
-  }, []);
+  }, [id]);
 
   const handleSubmit = e => {
     e.preventDefault();
     setError('');
 
-    api.post('/product-movements/create/', formData)
+    if (id) {
+      api.put(`/product-movements/${id}/update/`, formData)
       .then(() => navigate('/movements'))
       .catch(err => {
       const msg = JSON.stringify(err.response?.data.non_field_errors[0] || 'Movement failed.');
       setError(msg);
     });
+    }
+    else {
+      api.post('/product-movements/create/', formData)
+      .then(() => navigate('/movements'))
+      .catch(err => {
+        const msg = JSON.stringify(err.response?.data.non_field_errors[0] || 'Movement failed.');
+        setError(msg);
+      });
+    }
   };
 
   return (

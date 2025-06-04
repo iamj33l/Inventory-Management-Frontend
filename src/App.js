@@ -16,7 +16,6 @@ function App() {
         <Route path="/" element={<ProductListPage />} />
         <Route path="/products/add" element={<ProductFormPage />} />
         <Route path="/products/:id/edit" element={<ProductFormPage />} />
-        <Route path="/products/:id/move" element={<MovementFormPage />} />
         
         <Route path="/locations" element={<LocationListPage />} />
         <Route path="/locations/add" element={<LocationFormPage />} />

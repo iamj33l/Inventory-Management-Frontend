@@ -25,6 +25,7 @@ function MovementListPage() {
                         <th>Qty</th>
                         <th>Action</th>
                         <th>Timestamp</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -63,6 +64,9 @@ function MovementListPage() {
 
 
                             <td>{new Date(mv.timestamp).toLocaleString()}</td>
+                            <td>
+                                <Link to={`/movements/${mv.id}/edit/`} className="btn btn-sm btn-primary">Edit</Link>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
