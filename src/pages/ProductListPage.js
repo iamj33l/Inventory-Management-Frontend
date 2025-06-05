@@ -5,9 +5,13 @@ import Navbar from '../components/Navbar';
 
 function ProductListPage() {
   const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    api.get('/products/').then(res => setProducts(res.data));
+    api.get('/products/').then(res => {
+      setProducts(res.data);
+      setIsLoading(false);
+    });
   }, []);
 
   const handleDelete = id => {
