@@ -11,7 +11,7 @@ This repository contain frontend of the Inventory Management.
 
 1. Clone the repository:
 ```commqndline
-git clone https://github.com/iamj33l/Inventory-Management-Frontned.git
+git clone https://github.com/iamj33l/Inventory-Management-Frontend.git
 cd Inventory-Management-Frontend
 ```
 
